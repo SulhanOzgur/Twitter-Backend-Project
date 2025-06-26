@@ -1,7 +1,6 @@
 package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.*;
-import com.workintech.s20.challenge.twitterapi.entity.*;
 
 import java.util.List;
 

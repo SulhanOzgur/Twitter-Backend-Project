@@ -2,9 +2,7 @@ package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.RoleResponseDto;
 import com.workintech.s20.challenge.twitterapi.dto.UserResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
 import com.workintech.s20.challenge.twitterapi.entity.Role;
-import com.workintech.s20.challenge.twitterapi.entity.User;
 import com.workintech.s20.challenge.twitterapi.exception.RoleNotFoundException;
 import com.workintech.s20.challenge.twitterapi.mapper.RoleMapper;
 import com.workintech.s20.challenge.twitterapi.repository.RoleRepository;

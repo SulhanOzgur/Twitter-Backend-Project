@@ -1,8 +1,7 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
+import com.workintech.s20.challenge.twitterapi.dto.LikeRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.LikeResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.Like;
 import com.workintech.s20.challenge.twitterapi.service.LikeService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,18 +36,18 @@ public class LikeController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public LikeResponseDto save(@Validated @RequestBody Like like) {
-        return likeService.save(like);
+    public LikeResponseDto save(@Validated @RequestBody  LikeRequestDto likeRequestDto) {
+        return likeService.save(likeRequestDto);
     }
 
     @PutMapping("/{id}")
-    public LikeResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody Like like) {
-        return likeService.replaceOrCreate(id, like);
+    public LikeResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody LikeRequestDto likeRequestDto) {
+        return likeService.replaceOrCreate(id, likeRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public LikeResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody Like like) {
-        return likeService.update(id, like);
+    public LikeResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody LikeRequestDto likeRequestDto) {
+        return likeService.update(id, likeRequestDto);
     }
 
     @DeleteMapping("/{id}")

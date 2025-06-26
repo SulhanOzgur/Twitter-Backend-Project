@@ -2,7 +2,6 @@ package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.*;
 import com.workintech.s20.challenge.twitterapi.entity.*;
-import com.workintech.s20.challenge.twitterapi.exception.RoleNotFoundException;
 import com.workintech.s20.challenge.twitterapi.exception.TweetNotFoundException;
 import com.workintech.s20.challenge.twitterapi.mapper.TweetMapper;
 import com.workintech.s20.challenge.twitterapi.repository.TweetRepository;

@@ -2,9 +2,7 @@ package com.workintech.s20.challenge.twitterapi.service;
 
 
 import com.workintech.s20.challenge.twitterapi.dto.LikeResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
 import com.workintech.s20.challenge.twitterapi.entity.Like;
-import com.workintech.s20.challenge.twitterapi.exception.DislikeNotFoundException;
 import com.workintech.s20.challenge.twitterapi.exception.LikeNotFoundException;
 import com.workintech.s20.challenge.twitterapi.mapper.LikeMapper;
 import com.workintech.s20.challenge.twitterapi.repository.LikeRepository;

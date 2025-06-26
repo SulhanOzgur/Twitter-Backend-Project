@@ -2,9 +2,6 @@ package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.DislikeRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.DislikeResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.Dislike;
-import com.workintech.s20.challenge.twitterapi.entity.Tweet;
 
 import java.util.List;
 

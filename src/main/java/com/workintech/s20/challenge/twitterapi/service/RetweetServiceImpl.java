@@ -1,9 +1,7 @@
 package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.RetweetResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
 import com.workintech.s20.challenge.twitterapi.entity.Retweet;
-import com.workintech.s20.challenge.twitterapi.exception.DislikeNotFoundException;
 import com.workintech.s20.challenge.twitterapi.exception.RetweetNotFoundException;
 import com.workintech.s20.challenge.twitterapi.mapper.RetweetMapper;
 import com.workintech.s20.challenge.twitterapi.repository.RetweetRepository;

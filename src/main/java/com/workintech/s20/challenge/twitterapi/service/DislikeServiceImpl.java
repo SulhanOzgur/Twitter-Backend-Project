@@ -1,9 +1,7 @@
 package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.DislikeResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
 import com.workintech.s20.challenge.twitterapi.entity.Dislike;
-import com.workintech.s20.challenge.twitterapi.exception.CommentNotFoundException;
 import com.workintech.s20.challenge.twitterapi.exception.DislikeNotFoundException;
 import com.workintech.s20.challenge.twitterapi.mapper.DislikeMapper;
 import com.workintech.s20.challenge.twitterapi.repository.DislikeRepository;

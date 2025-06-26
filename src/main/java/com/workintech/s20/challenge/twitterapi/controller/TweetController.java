@@ -1,7 +1,6 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
 import com.workintech.s20.challenge.twitterapi.dto.*;
-import com.workintech.s20.challenge.twitterapi.entity.*;
 import com.workintech.s20.challenge.twitterapi.service.TweetService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,18 +35,18 @@ public class TweetController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public TweetResponseDto createTweet(@Validated @RequestBody Tweet tweet) {
-        return tweetService.save(tweet);
+    public TweetResponseDto createTweet(@Validated @RequestBody TweetRequestDto tweetRequestDto) {
+        return tweetService.save(tweetRequestDto);
     }
 
     @PutMapping("/{id}")
-    public TweetResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody Tweet tweet) {
-        return tweetService.replaceOrCreate(id, tweet);
+    public TweetResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody TweetRequestDto tweetRequestDto) {
+        return tweetService.replaceOrCreate(id, tweetRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public TweetResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody Tweet tweet) {
-        return tweetService.update(id, tweet);
+    public TweetResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody TweetRequestDto tweetRequestDto) {
+        return tweetService.update(id, tweetRequestDto);
     }
 
     @DeleteMapping("/{id}")

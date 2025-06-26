@@ -1,8 +1,7 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
+import com.workintech.s20.challenge.twitterapi.dto.CommentRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.CommentResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.User;
 import com.workintech.s20.challenge.twitterapi.service.CommentService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,18 +37,18 @@ public class CommentController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CommentResponseDto save(@RequestBody Comment comment) {
-        return commentService.save(comment);
+    public CommentResponseDto save(@Validated @RequestBody CommentRequestDto commentRequestDto) {
+        return commentService.save(commentRequestDto);
     }
 
     @PutMapping("/{id}")
-    public CommentResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody Comment comment) {
-        return commentService.replaceOrCreate(id, comment);
+    public CommentResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody CommentRequestDto commentRequestDto) {
+        return commentService.replaceOrCreate(id, commentRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public CommentResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody Comment comment) {
-        return commentService.update(id, comment);
+    public CommentResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody CommentRequestDto commentRequestDto) {
+        return commentService.update(id, commentRequestDto);
     }
 
     @DeleteMapping("/{id}")

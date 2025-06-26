@@ -2,9 +2,6 @@ package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.RetweetRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.RetweetResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.Retweet;
-import com.workintech.s20.challenge.twitterapi.entity.Tweet;
 
 import java.util.List;
 

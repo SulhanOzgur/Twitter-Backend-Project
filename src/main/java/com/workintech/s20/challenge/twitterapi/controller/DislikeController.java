@@ -1,8 +1,7 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
+import com.workintech.s20.challenge.twitterapi.dto.DislikeRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.DislikeResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.Dislike;
 import com.workintech.s20.challenge.twitterapi.service.DislikeService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,18 +36,18 @@ public class DislikeController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public DislikeResponseDto save(@Validated @RequestBody Dislike dislike) {
-        return dislikeService.save(dislike);
+    public DislikeResponseDto save(@Validated @RequestBody DislikeRequestDto dislikeRequestDto) {
+        return dislikeService.save(dislikeRequestDto);
     }
 
     @PutMapping("/{id}")
-    public DislikeResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody Dislike dislike) {
-        return dislikeService.replaceOrCreate(id, dislike);
+    public DislikeResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody DislikeRequestDto dislikeRequestDto) {
+        return dislikeService.replaceOrCreate(id, dislikeRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public DislikeResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody Dislike dislike) {
-        return dislikeService.update(id, dislike);
+    public DislikeResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody DislikeRequestDto dislikeRequestDto) {
+        return dislikeService.update(id, dislikeRequestDto);
     }
 
     @DeleteMapping("/{id}")

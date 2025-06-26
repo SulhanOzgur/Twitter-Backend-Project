@@ -2,14 +2,10 @@ package com.workintech.s20.challenge.twitterapi.service;
 
 import com.workintech.s20.challenge.twitterapi.dto.TweetResponseDto;
 import com.workintech.s20.challenge.twitterapi.dto.UserResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.Tweet;
 import com.workintech.s20.challenge.twitterapi.entity.User;
-import com.workintech.s20.challenge.twitterapi.exception.TweetNotFoundException;
 import com.workintech.s20.challenge.twitterapi.exception.UserNotFoundException;
 import com.workintech.s20.challenge.twitterapi.mapper.UserMapper;
 import com.workintech.s20.challenge.twitterapi.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,8 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
+import com.workintech.s20.challenge.twitterapi.dto.RoleRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.RoleResponseDto;
 import com.workintech.s20.challenge.twitterapi.dto.UserResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Role;
-import com.workintech.s20.challenge.twitterapi.entity.User;
 import com.workintech.s20.challenge.twitterapi.service.RoleService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,18 +37,18 @@ public class RoleController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public RoleResponseDto save(@Validated @RequestBody Role role) {
-        return roleService.save(role);
+    public RoleResponseDto save(@Validated @RequestBody RoleRequestDto roleRequestDto) {
+        return roleService.save(roleRequestDto);
     }
 
     @PutMapping("/{id}")
-    public RoleResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody Role role) {
-        return roleService.replaceOrCreate(id, role);
+    public RoleResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody RoleRequestDto roleRequestDto) {
+        return roleService.replaceOrCreate(id, roleRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public RoleResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody Role role) {
-        return roleService.update(id, role);
+    public RoleResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody RoleRequestDto roleRequestDto) {
+        return roleService.update(id, roleRequestDto);
     }
 
     @DeleteMapping("/{id}")

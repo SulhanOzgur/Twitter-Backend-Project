@@ -1,9 +1,8 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
 import com.workintech.s20.challenge.twitterapi.dto.TweetResponseDto;
+import com.workintech.s20.challenge.twitterapi.dto.UserRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.UserResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Tweet;
-import com.workintech.s20.challenge.twitterapi.entity.User;
 import com.workintech.s20.challenge.twitterapi.service.UserService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,18 +37,18 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserResponseDto save(@Validated @RequestBody User user) {
-        return userService.save(user);
+    public UserResponseDto save(@Validated @RequestBody UserRequestDto userRequestDto) {
+        return userService.save(userRequestDto);
     }
 
     @PutMapping("/{id}")
-    public UserResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody User user) {
-        return userService.replaceOrCreate(id, user);
+    public UserResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody UserRequestDto userRequestDto) {
+        return userService.replaceOrCreate(id, userRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public UserResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody User user) {
-        return userService.update(id, user);
+    public UserResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody UserRequestDto userRequestDto) {
+        return userService.update(id, userRequestDto);
     }
 
     @DeleteMapping("/{id}")

@@ -1,8 +1,7 @@
 package com.workintech.s20.challenge.twitterapi.controller;
 
+import com.workintech.s20.challenge.twitterapi.dto.RetweetRequestDto;
 import com.workintech.s20.challenge.twitterapi.dto.RetweetResponseDto;
-import com.workintech.s20.challenge.twitterapi.entity.Comment;
-import com.workintech.s20.challenge.twitterapi.entity.Retweet;
 import com.workintech.s20.challenge.twitterapi.service.RetweetService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,18 +36,18 @@ public class RetweetController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public RetweetResponseDto save(@Validated @RequestBody Retweet retweet) {
-        return retweetService.save(retweet);
+    public RetweetResponseDto save(@Validated @RequestBody RetweetRequestDto retweetRequestDto) {
+        return retweetService.save(retweetRequestDto);
     }
 
     @PutMapping("/{id}")
-    public RetweetResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody Retweet retweet) {
-        return retweetService.replaceOrCreate(id, retweet);
+    public RetweetResponseDto replaceOrCreate(@Positive @PathVariable Long id, @Validated @RequestBody RetweetRequestDto retweetRequestDto) {
+        return retweetService.replaceOrCreate(id, retweetRequestDto);
     }
 
     @PatchMapping("/{id}")
-    public RetweetResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody Retweet retweet) {
-        return retweetService.update(id, retweet);
+    public RetweetResponseDto update(@Positive @PathVariable Long id, @Validated @RequestBody RetweetRequestDto retweetRequestDto) {
+        return retweetService.update(id, retweetRequestDto);
     }
 
     @DeleteMapping("/{id}")
