@@ -5,17 +5,15 @@ import com.workintech.s20.challenge.twitterapi.dto.TweetResponseDto;
 import com.workintech.s20.challenge.twitterapi.entity.Tweet;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class TweetMapper {
 
     public Tweet toEntity(TweetRequestDto tweetRequestDto) {
        Tweet tweet = new Tweet();
-        tweet.setFirstName(tweetRequestDto.firstName());
-        tweet.setLastName(tweetRequestDto.lastName());
-        tweet.setUserName(tweetRequestDto.userName());
-        tweet.setPassword(tweetRequestDto.password());
-        tweet.setEmail(tweetRequestDto.email());
-        tweet.setRole(tweetRequestDto.role());
+        tweet.setContent(tweetRequestDto.content());
+        tweet.setCreatedAt(LocalDate.now());
 
         return tweet;
     }
@@ -23,11 +21,10 @@ public class TweetMapper {
 
     public TweetResponseDto toResponseDto(Tweet tweet) {
         return new TweetResponseDto(
-                tweet.getFirstName(),
-                tweet.getLastName(),
-                tweet.getUserName(),
-                tweet.getEmail(),
-                tweet.getRole()
+                tweet.getContent(),
+                tweet.getCreatedAt(),
+                tweet.getUser().getId(),
+                tweet.getUser().getUserName()
         );
     }
 

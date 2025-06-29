@@ -64,6 +64,9 @@ public class User {
 
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "role_id")
+    @NotEmpty
+    @NotNull
+    @NotBlank
     private Role role;
 
 

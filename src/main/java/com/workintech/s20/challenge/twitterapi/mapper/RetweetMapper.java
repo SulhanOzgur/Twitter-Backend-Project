@@ -10,24 +10,16 @@ public class RetweetMapper {
 
     public Retweet toEntity(RetweetRequestDto retweetRequestDto) {
         Retweet retweet = new Retweet();
-        retweet.setFirstName(retweetRequestDto.firstName());
-        retweet.setLastName(retweetRequestDto.lastName());
-        retweet.setUserName(retweetRequestDto.userName());
-        retweet.setPassword(retweetRequestDto.password());
-        retweet.setEmail(retweetRequestDto.email());
-        retweet.setRole(retweetRequestDto.role());
-
         return retweet;
     }
 
 
     public RetweetResponseDto toResponseDto(Retweet retweet) {
         return new RetweetResponseDto(
-                retweet.getFirstName(),
-                retweet.getLastName(),
-                retweet.getUserName(),
-                retweet.getEmail(),
-                retweet.getRole()
+                retweet.getId(),
+                retweet.getRetweetedAt(),
+                retweet.getTweet().getContent(),
+                retweet.getUser().getUserName()
         );
     }
 

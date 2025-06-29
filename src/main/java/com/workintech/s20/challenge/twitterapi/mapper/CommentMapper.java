@@ -10,12 +10,7 @@ public class CommentMapper {
 
     public Comment toEntity(CommentRequestDto commentRequestDto) {
         Comment comment = new Comment();
-        comment.setFirstName(commentRequestDto.firstName());
-        comment.setLastName(commentRequestDto.lastName());
-        comment.setUserName(commentRequestDto.userName());
-        comment.setPassword(commentRequestDto.password());
-        comment.setEmail(commentRequestDto.email());
-        comment.setRole(commentRequestDto.role());
+        comment.setContent(commentRequestDto.content());
 
         return comment;
     }
@@ -23,11 +18,11 @@ public class CommentMapper {
 
     public CommentResponseDto toResponseDto(Comment comment) {
         return new CommentResponseDto(
-                comment.getFirstName(),
-                comment.getLastName(),
-                comment.getUserName(),
-                comment.getEmail(),
-                comment.getRole()
+                comment.getId(),
+                comment.getContent(),
+                comment.getCommentedAt(),
+                comment.getUser().getUserName(),
+                comment.getTweet().getId()
         );
     }
 
